@@ -1,0 +1,94 @@
+div {
+    
+    margin: 0 auto;
+    padding-bottom: 10px;
+
+    .g-signin2 {
+        margin: 0 auto;
+        
+    }
+    
+}
+
+
+.pomodore {
+
+    color: #fff;
+    border-radius: 6px;
+    background-color: tomato;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem 1rem 3rem; 
+    max-width: 400px;
+    margin: 0 auto;
+    
+
+
+    // .menu-nav {
+    //     // float: right;
+    //     // display: flex;
+    //     flex-wrap: wrap;
+    //     flex: 1;
+    //     width: 100%;
+    //     // justify-content: space-between;
+    //     .menu {
+    //         display: flex;
+    //         max-width: 100px;
+    //         justify-content: space-between;
+            
+    //         .item {
+    //             display: inline-block;
+    //             text-align: center;
+    //             justify-content: space-around;
+                
+    //         }
+        
+    //     }
+
+    // }
+    
+    .menu {
+        display: flex;
+        flex-grow: 1;
+        text-align: center;
+        font-size: 25px;
+        .item {
+            flex-grow: 1;
+        }
+    }
+
+    .timer {
+        width: 100%;
+        font-size: 80px;
+        font-weight: lighter; 
+        text-align: center;
+        
+
+    }
+
+    .btn {
+        display: flex;
+        flex-grow: 1;
+        button {
+        // width: 200px;
+        display: inline-block;
+        padding: 6px 12px;
+        font-size: 14px;
+        flex: 1;
+        color: #fff;
+        background-color: tomato;
+        width: 100%;
+        border: 1px solid white;
+        border-radius: 4px;
+        margin-left: 5px;
+        
+
+    }
+}
+}
+
+.g-signin2 {
+    margin-left: 500px;
+    margin-top: 200px;
+}
+

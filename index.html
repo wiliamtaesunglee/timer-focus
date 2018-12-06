@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -17,23 +17,24 @@
     
 </head>
 <body>
-    <div>
+    <div class="google-btn">
         <div class="g-signin2" data-onsuccess="onSignIn"></div>
-        <!-- <div><a href="#" onclick="signOut();">Sign out</a></div> -->
+        <div class="g-signout"><a class="g-signout" href="#" onclick="signOut();">Sign out</a></div>
     </div>
     <section class="pomodore">
-        <!-- <div class="menu-nav"> -->
-            <div class="menu">
-                <div class="item name"><h2>user</h2></div>
-                <div class="item"><h2>Status</h2></div>
-                <!-- <div class="item"><h2>Counter</h2></div> -->
-            </div>
-            <div class="timer">25:00</div>
-            <div class="btn">
-                <button class="btn-start">iniciar</button>
-                <button class="btn-stop" >parar</button>
-            <!-- </div> -->
-        </div>
+        
+    <div class="menu">
+        <div class="item name"><p>user</p></div>
+        <!-- <div class="item Counter"><p>--</p></div> -->
+        <div class="item status"><p>status</p></div>
+    </div>
+    <div class="timer">25:00</div>
+    <div class="btn">
+        <button class="btn-start">iniciar</button>
+        <button class="btn-stop">parar</button>
+    
+    </div>
+
     </section>
     <script src="./js/script.js"></script>
 </body>
@@ -41,3 +42,5 @@
 
 
 
+
+        

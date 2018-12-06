@@ -54,7 +54,24 @@ div .g-signin2 {
   margin-left: 5px;
 }
 
-.g-signin2 {
-  margin-left: 500px;
-  margin-top: 200px;
+.google-btn {
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  justify-content: center;
+}
+
+.g-signout {
+  height: 36px;
+  width: 120px;
+  background-color: whitesmoke;
+  color: #757575;
+  text-align: center;
+  padding: 8px 5px 0 0;
+  text-decoration: none;
+}
+
+.g-signout a:hover {
+  text-decoration: none;
 }

@@ -24,11 +24,14 @@ function onSignIn(googleUser) {
 
 };
 
+//! singOut
+const clearUser = document.querySelector('.name');
 function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
     console.log('User signed out.');
     });
+    clearUser.innerHTML = 'user';
 }
 
 //! tiemr function
@@ -36,7 +39,7 @@ function signOut() {
 
 function startTimer(duration, display) {
     var timer = duration, minutes, seconds;
-    const status = document.querySelector('.status');
+    // const counter = document.querySelector('.counter');
 
     interval = setInterval(() => {
         minutes = parseInt(timer / 60, 10);
@@ -49,7 +52,7 @@ function startTimer(duration, display) {
 
         if(--timer < 0) {
             timer = duration;
-            status.innerHTML = i++;
+            // counter.innerHTML = i++;
         }
 
     }, 1000);
@@ -80,11 +83,15 @@ const time = () => {
 //! start function
 const iniciar = document.querySelector('.btn-start');
 const reset = document.querySelector('.timer');
+const status = document.querySelector('.status');
+
 
 function start() {
 
     time();
     iniciar.setAttribute('disabled', '');
+    status.innerHTML = 'bussy';
+
 }
 
 iniciar.addEventListener('click', start);
@@ -97,7 +104,8 @@ function stop() {
     clearInterval(interval);
     reset.innerHTML = '25:00';
     iniciar.removeAttribute('disabled', '');
+    status.innerHTML = 'available';
 }
 
-parar.addEventListener('click', stop)
+parar.addEventListener('click', stop);
 

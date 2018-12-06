@@ -22,31 +22,6 @@ div {
     max-width: 400px;
     margin: 0 auto;
     
-
-
-    // .menu-nav {
-    //     // float: right;
-    //     // display: flex;
-    //     flex-wrap: wrap;
-    //     flex: 1;
-    //     width: 100%;
-    //     // justify-content: space-between;
-    //     .menu {
-    //         display: flex;
-    //         max-width: 100px;
-    //         justify-content: space-between;
-            
-    //         .item {
-    //             display: inline-block;
-    //             text-align: center;
-    //             justify-content: space-around;
-                
-    //         }
-        
-    //     }
-
-    // }
-    
     .menu {
         display: flex;
         flex-grow: 1;
@@ -87,8 +62,24 @@ div {
 }
 }
 
-.g-signin2 {
-    margin-left: 500px;
-    margin-top: 200px;
+
+.google-btn {
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    justify-content: center;
 }
 
+.g-signout {
+    height:36px;
+    width:120px;
+    background-color: whitesmoke;
+    color: #757575;
+    text-align: center;
+    padding: 8px 5px 0 0; 
+    text-decoration: none;
+    a:hover {
+        text-decoration: none;
+    }
+}

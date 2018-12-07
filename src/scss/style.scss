@@ -51,17 +51,31 @@ div {
         font-size: 14px;
         flex: 1;
         color: #fff;
-        background-color: tomato;
+        
         width: 100%;
         border: 1px solid white;
         border-radius: 4px;
         margin-left: 5px;
+        background-color: tomato;
+
         
+        // .js-btnStart {
+        //     background-color: red !important;
+        // }
 
     }
 }
 }
 
+
+.userPhoto {
+    padding: 15px;
+    text-align: center;
+    a img {
+        height: 150px;
+        width: 150px;
+    }
+}
 
 .google-btn {
     max-width: 400px;

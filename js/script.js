@@ -72,61 +72,50 @@ var user = firebase.auth().currentUser;
 var name, email, photoUrl, uid, emailVerified;
 var user = firebase.auth().currentUser;
 
-firebase.auth().onAuthStateChanged(function(user) {
-    if (user != null) {
-        user.providerData.forEach(function (profile) {
-            menu.children[0].innerHTML = profile.displayName;
-            // menu.children[1].innerHTML = '<p>status</p>'
-            // userOff.innerHTML = 'available';
-            userImg.setAttribute('src', profile.photoURL);
+firebase.auth().onAuthStateChanged(function(_user) {
 
-            // console.log("Sign-in provider: " + profile.providerId);
-            // console.log("  Provider-specific UID: " + profile.uid);
-            // console.log("  Name: " + profile.displayName);
-            // console.log("  Email: " + profile.email);
-            // console.log("  Photo URL: " + profile.photoURL);
-            //!Adicionar
-            db.collection('userData').doc(`${profile.email}`).set({
-                name: `${profile.displayName}`,
-                imgUrl: `${profile.photoURL}`,
-                status: true
+    if(!_user) return;
 
-            });
-        });
+    user = _user;
+    const profile = user.providerData[0];
+                
+    menu.children[0].innerHTML = profile.displayName;
+    userImg.setAttribute('src', profile.photoURL);
 
-    } else {
-        const singOutButtun = document.querySelector('.g-singout');
-        console.log(singOutButtun);
-        
-        
-    }
+    //!Adicionar
+    db.collection('userData').doc(profile.email).set({
+        name: `${profile.displayName}`,
+        imgUrl: `${profile.photoURL}`,
+        status: true
+    });  
 });
 
+db.collection("userData").get().then(res => {
 
+    res.forEach(data => {
+        console.log(data.data())
+    })
+})
 
+//! singOut
     
 const singOutButtun = document.querySelector('.g-signout');
-singOutButtun.addEventListener('click', function singOutButton() {
+singOutButtun.addEventListener('click', () => {
+    
+    db.collection("userData").doc(user.providerData[0].email).update({
+        status: false
+    });
+
     firebase.auth().signOut().then(function() {
         menu.children[0].innerHTML = 'user';
-        // menu.children[1].innerHTML = '<p>status</p>'
-        // userOff.innerHTML = 'available';
         userImg.setAttribute('src', 'http://placehold.jp/150x150.png');
-        // Sign-out successc
-        console.log('foi');
-      }).catch(function(error) {
-        // An error happened.
-      });
-} )
-    
-    
-    
-// };
 
-// //! singOut
-// const clearUser = document.querySelector('.name');
-
-// }
+        
+        
+        }).catch(function(error) {
+            // An error happened.
+        });
+})
 
 //! tiemr function
 function startTimer(duration, display) {

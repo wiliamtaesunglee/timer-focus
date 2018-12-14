@@ -1,10 +1,29 @@
-div {
+.container {
+  display: flex;
+  padding: 15px;
+  max-width: 960px;
   margin: 0 auto;
-  padding-bottom: 10px;
+  justify-content: space-around;
 }
 
-div .g-signin2 {
-  margin: 0 auto;
+.container .g-signout {
+  align-self: center;
+  height: 36px;
+  width: 90px;
+  background-color: white;
+  color: #757575;
+  text-align: center;
+  padding: 8px 5px 0 0;
+  text-decoration: none;
+}
+
+.container .g-signout a:hover {
+  text-decoration: none;
+}
+
+header {
+  background-color: whitesmoke;
+  width: 100%;
 }
 
 .pomodore {
@@ -15,7 +34,7 @@ div .g-signin2 {
   flex-wrap: wrap;
   padding: 1rem 1rem 3rem;
   max-width: 400px;
-  margin: 0 auto;
+  margin: 15px auto;
 }
 
 .pomodore .menu {
@@ -62,6 +81,7 @@ div .g-signin2 {
 .userPhoto a img {
   height: 150px;
   width: 150px;
+  border-radius: 50%;
 }
 
 .google-btn {
@@ -72,16 +92,29 @@ div .g-signin2 {
   justify-content: center;
 }
 
-.g-signout {
-  height: 36px;
-  width: 120px;
-  background-color: whitesmoke;
-  color: #757575;
-  text-align: center;
-  padding: 8px 5px 0 0;
-  text-decoration: none;
+.info {
+  align-self: center;
 }
 
-.g-signout a:hover {
-  text-decoration: none;
+.userPhotoList {
+  align-self: center;
+}
+
+.userPhotoList a img {
+  flex: 1;
+  border-radius: 50%;
+  width: 150px;
+}
+
+.user-data {
+  background-color: tomato;
+  width: 400px;
+  border-radius: 10px;
+  color: white;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.box {
+  flex-wrap: wrap;
 }

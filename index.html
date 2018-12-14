@@ -4,42 +4,113 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
-    
-    
-    <!-- Latest compiled and minified CSS -->
+        
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <!-- <meta name="google-signin-client_id" content="633973713443-ejiqu54pb71parjqe9fk5velalb5c865.apps.googleusercontent.com">
-    <meta name="google-signin-cookiepolicy" content="single_host_origin">
-    <meta name="google-signin-scope" content="profile email"> -->
-    <!-- <script src="https://apis.google.com/js/platform.js" async defer></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-    
     <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css" />
     
 </head>
 <body>
-    <div class="google-btn">
-        <!-- <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark">tchau</div> -->
-        <div class="g-signout"><a class="g-signout" href="#" >Sign out</a></div></div>
-    <section class="pomodore">
+
+    <header>
+        <div class="container">
+            <a class="menu-logo">
+                <img src="http://static.photongroup.com/signature/photongroup.png" alt="photongroup"></a>
+            <a class="g-signout" href="#" >Sign out</a>
+        </div>
+    </header>
+
+    <div>
         
-    <div class="menu">
-        <div class="item name"><p>user</p></div>
-        <!-- <div class="item Counter"><p>--</p></div> -->
-        <div class="item status"><p>available</p></div>
+        <section class="pomodore">
+            
+        <div class="menu">
+            <div class="item name"><p>user</p></div>
+            <!-- <div class="item Counter"><p>--</p></div> -->
+            <div class="item status"><p>available</p></div>
+        </div>
+        <div class="timer">25:00</div>
+        <div class="btn">
+            <button class="btn-start">iniciar</button>
+            <button class="btn-stop">parar</button>
+        </div>
+        </section>
+
+        <div class="userPhoto">
+            <a>
+                <img src="http://placehold.jp/150x150.png">
+            </a>
+        </div>
+
+        <hr>
+
+    <section class="container box">
+        <div class="container user-data">
+            <div class="userPhotoList">
+                    <a>
+                        <img src="http://placehold.jp/150x150.png">
+                    </a>
+            </div>
+            <div class="info">
+                <h2>Status</h2>
+                <h2>Name</h2>
+                <h2>25:00</h2>
+            </div>
+            <div>
+                <a></a>
+            </div>
     </div>
-    <div class="timer">25:00</div>
-    <div class="btn">
-        <button class="btn-start">iniciar</button>
-        <button class="btn-stop">parar</button>
+    <div class="container user-data">
+            <div class="userPhotoList">
+                    <a>
+                        <img src="http://placehold.jp/150x150.png">
+                    </a>
+            </div>
+            <div class="info">
+                <h2>Status</h2>
+                <h2>Name</h2>
+                <h2>25:00</h2>
+            </div>
+            <div>
+                <a></a>
+            </div>
+    </div>
+
+    <div class="container user-data">
+            <div class="userPhotoList">
+                    <a>
+                        <img src="http://placehold.jp/150x150.png">
+                    </a>
+            </div>
+            <div class="info">
+                <h2>Status</h2>
+                <h2>Name</h2>
+                <h2>25:00</h2>
+            </div>
+            <div>
+                <a></a>
+            </div>
+    </div>
+
+    <div class="container user-data">
+            <div class="userPhotoList">
+                    <a>
+                        <img src="http://placehold.jp/150x150.png">
+                    </a>
+            </div>
+            <div class="info">
+                <h2>Status</h2>
+                <h2>Name</h2>
+                <h2>25:00</h2>
+            </div>
+            <div>
+                <a></a>
+            </div>
     </div>
     </section>
 
-    <div class="userPhoto">
-        <a>
-            <img src="http://placehold.jp/150x150.png">
-        </a>
+    
+
     </div>
     <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
     <script>
@@ -55,6 +126,7 @@
     firebase.initializeApp(config);
     </script>
     <script src="./js/script.js"></script>
+    <script src="./js/user-status.js"></script>
 </body>
 </html>
 

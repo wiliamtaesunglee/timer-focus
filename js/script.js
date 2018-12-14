@@ -66,7 +66,7 @@ provider.setCustomParameters({
 });
 
     
-    //!dados usuários
+//!dados usuários
 
 var user = firebase.auth().currentUser;
 var name, email, photoUrl, uid, emailVerified;
@@ -82,11 +82,12 @@ firebase.auth().onAuthStateChanged(function(_user) {
     menu.children[0].innerHTML = profile.displayName;
     userImg.setAttribute('src', profile.photoURL);
 
-    //!Adicionar
+//!Adicionar
     db.collection('userData').doc(profile.email).set({
         name: `${profile.displayName}`,
         imgUrl: `${profile.photoURL}`,
-        status: true
+        status: true,
+        time: "25:00"
     });  
 });
 
@@ -146,8 +147,11 @@ const time = () => {
     const twentyFive = 60 * 25, 
     display = document.querySelector('.timer');
     startTimer(twentyFive, display); 
+
     
 };
+
+
 
 //! start function
 const iniciar = document.querySelector('.btn-start');
@@ -158,13 +162,23 @@ const btnStartColor = document.querySelector('.btn-start');
 const btnStopColor = document.querySelector('.btn-stop');
 
 function start() {
-
+    
     time();
+
     iniciar.setAttribute('disabled', '');
     status.innerHTML = 'bussy';
     statusColor.classList.add('.js-statusColor');
     btnStartColor.classList.add('.js-btnStart');
     btnStopColor.classList.remove('.js-btnStop');
+    
+    setInterval(() => {
+        
+        db.collection("userData").doc(user.providerData[0].email).update({
+           time: `${document.querySelector('.timer').innerHTML}`,
+        //    
+          });
+    }, 1000)
+    
 }
 
 iniciar.addEventListener('click', start);

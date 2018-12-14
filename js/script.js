@@ -5,37 +5,21 @@ const db = firebase.firestore();
 const settings = {timestampsInSnapshots: true};
 db.settings(settings);
 
-// Ler
-// db.collection("teste").get().then(res => {
-//     res.forEach((doc) => {
-//         console.log(`${doc.id} => ${doc.data().name}`);
-//     });
-// })
-
-// Adicionar
-// db.collection("teste").doc("XPTO").set({
-//     name: "Hugo"
-// });
-
-// Atualizar
-// db.collection("teste").doc("XPTO").update({
-//     name: "Will"
-// });
 //! regras de autenticações
 const provider = new firebase.auth.GoogleAuthProvider();
 provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
 firebase.auth().languageCode = 'pt';
 provider.setCustomParameters({
     'login_hint': 'user@example.com'
-  })
+})
 
-  firebase.auth().signInWithPopup(provider).then(function(result) {
+firebase.auth().signInWithPopup(provider).then(function(result) {
     // This gives you a Google Access Token. You can use it to access the Google API.
     var token = result.credential.accessToken;
     // The signed-in user info.
     var user = result.user;
     // ...
-  }).catch(function(error) {
+}).catch(function(error) {
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
@@ -44,9 +28,9 @@ provider.setCustomParameters({
     // The firebase.auth.AuthCredential type that was used.
     var credential = error.credential;
     // ...
-  });
+});
 
-  firebase.auth().getRedirectResult().then(function(result) {
+firebase.auth().getRedirectResult().then(function(result) {
     if (result.credential) {
         // This gives you a Google Access Token. You can use it to access the Google API.
         var token = result.credential.accessToken;
@@ -90,13 +74,6 @@ firebase.auth().onAuthStateChanged(function(_user) {
         time: "25:00"
     });  
 });
-
-db.collection("userData").get().then(res => {
-
-    res.forEach(data => {
-        console.log(data.data())
-    })
-})
 
 //! singOut
     
@@ -174,11 +151,10 @@ function start() {
     setInterval(() => {
         
         db.collection("userData").doc(user.providerData[0].email).update({
-           time: `${document.querySelector('.timer').innerHTML}`,
+            time: `${document.querySelector('.timer').innerHTML}`,
         //    
-          });
+        });
     }, 1000)
-    
 }
 
 iniciar.addEventListener('click', start);
